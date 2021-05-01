@@ -42,7 +42,7 @@ public class Main {
 		ProductManager productManager=new ProductManager ();
 		productManager.addToCart(product1);
 		productManager.addToCart(product2);
-	    productManager.addToCart(product3);
+	    productManager.addToCart(product3);  
 		
 	}
 

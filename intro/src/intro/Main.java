@@ -11,7 +11,7 @@ public class Main {
 		int vade_=36;
 		boolean dustuMu=false;
 		
-		if(dolarBugun<dolarDun) {
+		if(dolarBugun<dolarDun) {  
 			System.out.println("Dolar düþtü resmi");
 			
 		}else if(dolarBugun>dolarDun){
