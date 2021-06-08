@@ -2,10 +2,13 @@ package hrmsproject.hrms.business.abstracts;
 
 import java.util.List;
 
+import hrmsproject.hrms.core.utilities.results.DataResult;
+import hrmsproject.hrms.core.utilities.results.Result;
 import hrmsproject.hrms.entities.concretes.Employer;
 
 public interface EmployerService {
-	List<Employer> getAll();
+	DataResult<List<Employer>> getAll();
+	Result add(Employer employer);
 	
 
 }

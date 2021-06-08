@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import hrmsproject.hrms.business.abstracts.EmployerService;
+import hrmsproject.hrms.core.utilities.results.DataResult;
+import hrmsproject.hrms.core.utilities.results.Result;
+import hrmsproject.hrms.core.utilities.results.SuccessDataResult;
+import hrmsproject.hrms.core.utilities.results.SuccessResult;
 import hrmsproject.hrms.dataAccess.abstracts.EmployerDao;
 import hrmsproject.hrms.entities.concretes.Employer;
 @Service
@@ -20,9 +24,16 @@ public class EmployerManager implements EmployerService {
 	}
 
 	@Override
-	public List<Employer> getAll() {
+	public DataResult<List<Employer>> getAll() {
 		
-		return this.employerDao.findAll();
+		return new SuccessDataResult<List<Employer>> (this.employerDao.findAll(),"İsverenler listelendi");
+				
+	}
+
+	@Override
+	public Result add(Employer employer) {
+		this.employerDao.save(employer);
+		return new SuccessResult("İş veren eklendi");
 	}
 
 }
